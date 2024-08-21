@@ -304,7 +304,7 @@ func resourceCluster() *schema.Resource {
 				ForceNew: true,
 				ValidateFunc: validation.All(
 					validation.StringLenBetween(1, 128),
-					validation.StringMatch(regexache.MustCompile(`^\w+$`), "must contain only alphanumeric characters"),
+					validation.StringMatch(regexache.MustCompile(`^[\w-]+$`), "must contain only alphanumeric characters"),
 					validation.StringMatch(regexache.MustCompile(`(?i)^[a-z_]`), "first character must be a letter"),
 				),
 			},
